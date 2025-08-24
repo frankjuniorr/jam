@@ -1,4 +1,4 @@
-Jam
+Jam 🎸
 ===========
 
 <p align="left">
@@ -29,20 +29,14 @@ For example:
 ./jam.sh menus/system/system.yaml
 ```
 
-```
-```
 This will open the system menu directly — and you can do the same with any other menu.
 
-
-```
-``` 
-```
-```
 ## Install
 Because it’s just Shell Script, there’s no installation required.
 However, it does depend on several external tools.
 
 I haven’t built an automated dependency installer yet (since Linux environments can vary a lot), but the code is full of validations: it will only run if all required dependencies are available.
+
 ----
 
   ### License:
