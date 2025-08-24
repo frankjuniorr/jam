@@ -1,0 +1,21 @@
+visibility: public
+namespace: Docker 
+tags: [docker]
+executables:
+
+  - verb: run
+    name: docker 
+    description: |
+      My Docker commands.
+      Basically is a wrapper to some docker commands 
+      commands avaliable:
+        - "ps" : 'docker ps' customized 
+        - "shell" : Enter inside a some container shell 
+        - "ephemeral" : Create a new ephemeral container 
+        - "logs" : Show the logs about some container 
+        - "TUI" : Open lazydocker 
+        - "destroy" : Clean all the docker environment 
+    exec:
+      logMode: text
+      dir: "//"
+      cmd: ./jam.sh menus/code/docker/docker.yaml

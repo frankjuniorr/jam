@@ -1,0 +1,10 @@
+title: "Git Status"
+script: "git/git-status/git-status.sh"
+icon: "📋"
+items:
+  - icon: "🗑️"
+    label: "Remove Untracked"
+    action: "remove_untracked"
+  - icon: "🧹"
+    label: "Clean"
+    action: "clean"

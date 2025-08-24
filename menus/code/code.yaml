@@ -1,0 +1,10 @@
+title: "Code"
+script: "code/code.sh"
+icon: "💻"
+items:
+  - icon: "🐋"
+    label: "Docker"
+    action: "docker"
+  - icon: "🐍"
+    label: "Python"
+    action: "python"

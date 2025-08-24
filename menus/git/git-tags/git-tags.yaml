@@ -1,0 +1,10 @@
+title: "Git Tags"
+script: "git/git-tags/git-tags.sh"
+icon: "🏷️"
+items:
+  - icon: "🌿"
+    label: "New Branch from Tag"
+    action: "new_branch_from_tag"
+  - icon: "✏️"
+    label: "Rename"
+    action: "rename"

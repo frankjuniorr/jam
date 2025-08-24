@@ -1,0 +1,13 @@
+title: "Archive Tools"
+script: "archive-tools/archive-tools.sh"
+icon: "🗂️"
+items:
+  - icon: "📦"
+    label: "Extract"
+    action: "extract"
+  - icon: "🔍"
+    label: "List"
+    action: "list_contents"
+  - icon: "🗜️"
+    label: "Compress"
+    action: "compress"

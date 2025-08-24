@@ -1,0 +1,18 @@
+visibility: public
+namespace: archive-tools
+tags: [archive]
+executables:
+
+  - verb: run
+    name: archive-tools 
+    description: |
+      My Archive commands.
+      Basically is a wrapper to archive commands.
+      commands avaliable:
+        - "Extract" : Extract compressed files. Formats avaliable are: .zip, .tar, .tar, .tar.gz, .7z  
+        - "List" : List the compressed file content 
+        - "Compress" : Compress a series of file in current folder interativaly 
+    exec:
+      logMode: text
+      dir: "//"
+      cmd: ./jam.sh menus/archive-tools/archive-tools.yaml

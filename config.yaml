@@ -1,0 +1,7 @@
+# Avaliable options:
+# - 'dark'
+# - 'light'
+color_theme: "dark"
+
+# G1 Color
+tematic_color: "#e52e2e"

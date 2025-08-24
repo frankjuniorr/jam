@@ -1,0 +1,13 @@
+title: "Git Log"
+script: "git/git-log/git-log.sh"
+icon: "📜"
+items:
+  - icon: "👤"
+    label: "By Name"
+    action: "by_name"
+  - icon: "📧"
+    label: "By Email"
+    action: "by_email"
+  - icon: "🕒"
+    label: "last Commit"
+    action: "last_commit"

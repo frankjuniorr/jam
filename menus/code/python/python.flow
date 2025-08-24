@@ -1,0 +1,19 @@
+visibility: public
+namespace: python 
+tags: [python]
+executables:
+
+  - verb: run
+    name: python
+    description: |
+      My Python commands.
+      Basically is a wrapper to python commands.
+      commands avaliable:
+        - "Enable venv" : Enable a virtual python environment 
+        - "Disable venv" : Disable a virtual python environment 
+        - "Shell" : Enter in a python shell 
+        - "Zen" : Show the Zen of Python 
+    exec:
+      logMode: text
+      dir: "//"
+      cmd: ./jam.sh menus/code/python/python.yaml

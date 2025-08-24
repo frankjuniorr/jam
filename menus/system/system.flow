@@ -1,0 +1,16 @@
+visibility: public
+namespace: system 
+tags: [system]
+executables:
+
+  - verb: run
+    name: system
+    description: |
+      Basically my wrapper commands relatives to System
+      commands avaliable:
+        - "Bluetooth" : Show the Bluetooth menu commands 
+        - "Upgrade" : Upgrade the system 
+    exec:
+      logMode: text
+      dir: "//"
+      cmd: ./jam.sh menus/system/system.yaml

@@ -1,0 +1,11 @@
+title: "Bluetooth"
+script: "system/bluetooth/bluetooth.sh"
+icon: "🔵"
+items:
+  - icon: "🔄"
+    label: "Restart"
+    action: "restart"
+
+  - icon: "🎧"
+    label: "Connect Headphone"
+    action: "connect_headphone"

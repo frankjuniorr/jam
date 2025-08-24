@@ -1,0 +1,32 @@
+title: "Docker"
+script: "code/docker/docker.sh"
+icon: "🐋"
+items:
+  - icon: "📋"
+    label: "ps"
+    action: "ps"
+
+  - icon: "🐳"
+    label: "shell"
+    action: "shell"
+
+
+  - icon: "⚡"
+    label: "ephemeral"
+    action: "ephemeral"
+
+
+  - icon: "📜"
+    label: "logs"
+    action: "logs"
+
+
+  - icon: "🎛️"
+    label: "TUI"
+    action: "tui"
+
+
+  - icon: "💥"
+    label: "Destroy"
+    action: "destroy"
+

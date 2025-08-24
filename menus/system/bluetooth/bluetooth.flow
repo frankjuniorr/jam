@@ -1,0 +1,16 @@
+visibility: public
+namespace: Bluetooth 
+tags: [bluetooth]
+executables:
+
+  - verb: run
+    name: bluetooth
+    description: |
+      A simple bluetooth commands
+      commands avaliable:
+        - "Restart" : restart the bluetooth daemon 
+        - "Connect Headphone" : Connect my headphone by CLI 
+    exec:
+      logMode: text
+      dir: "//"
+      cmd: ./jam.sh menus/system/bluetooth/bluetooth.yaml

@@ -1,0 +1,18 @@
+
+
+title: "Python"
+script: "code/python/python.sh"
+icon: "🐍"
+items:
+  - icon: "✅"
+    label: "Enable venv"
+    action: "enable_venv"
+  - icon: "❌"
+    label: "Disable venv"
+    action: "disabel_venv"
+  - icon: "🐍"
+    label: "Shell"
+    action: "open_shell"
+  - icon: "🧘"
+    label: "Zen"
+    action: "zen"

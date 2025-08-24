@@ -1,0 +1,16 @@
+visibility: public
+namespace: code 
+tags: [code]
+executables:
+
+  - verb: run
+    name: code
+    description: |
+      Basically my wrapper commands relatives to Code
+      commands avaliable:
+        - "Python" : Show the Python menu commands 
+        - "Docker" : Show the Docker menu commands 
+    exec:
+      logMode: text
+      dir: "//"
+      cmd: ./jam.sh menus/code/code.yaml

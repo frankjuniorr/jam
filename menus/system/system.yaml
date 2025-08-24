@@ -1,0 +1,10 @@
+title: "System"
+script: "system/system.sh"
+icon: "⚙️"
+items:
+  - icon: "🔵"
+    label: "Bluetooth"
+    action: "bluetooth"
+  - icon: "🔄"
+    label: "Upgrade"
+    action: "upgrade"
