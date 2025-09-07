@@ -34,7 +34,14 @@ __ubuntu_upgrade() {
   sudo apt clean -y
 }
 
+__neovim_upgrade() {
+  nvim --headless "+Lazy! sync" +qa
+}
+
 __arch_upgrade() {
+  figlet "Neovim"
+  __neovim_upgrade
+
   figlet "Arch"
   echo "==> Atualizando o sistema..."
   sudo pacman -Syu --noconfirm

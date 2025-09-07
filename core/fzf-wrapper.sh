@@ -114,10 +114,10 @@ create_fzf_menu() {
     export "${action}_desc_file"=$(create_md_file_description "$menu_item" "$script_path")
 
     # Build preview cases dynamically
-    preview_cases+="\"$menu_item\") script -qfc \"glow \$${action}_desc_file\" /dev/null ;;"$'\n'
+    preview_cases+="\"$menu_item\") script -qfc \"glow \$${action}_desc_file\" /dev/null ;;"
 
     # Build bind cases dynamically
-    bind_cases+="\"$menu_item\") \${EDITOR:-vim} \"\$${action}_desc_file\" ;;"$'\n'
+    bind_cases+="\"$menu_item\") \${EDITOR:-vim} \"\$${action}_desc_file\" ;;"
   done
 
   # Create the fzf command with dynamic preview and bind cases
@@ -134,7 +134,7 @@ create_fzf_menu() {
         --bind "ctrl-e:execute(
         case {} in
           $bind_cases
-        esac > /dev/tty
+      esac
       )"
   )
 
