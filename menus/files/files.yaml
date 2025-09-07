@@ -1,0 +1,10 @@
+title: "Files"
+script: "files/files.sh"
+icon: "📁"
+items:
+  - icon: "📄"
+    label: "Find Files"
+    action: "find_files"
+  - icon: "🔍"
+    label: "Search String"
+    action: "search_string"

@@ -161,6 +161,7 @@ create_generic_fzf_menu() {
   local -n items="$1"
   local header_text="$2"
   local multi_selection="${3:-false}"
+  local preview_cmd="$4"
 
   local display_options=()
 
@@ -188,6 +189,11 @@ create_generic_fzf_menu() {
   # If '$multi_selection' is true, the menu accepts multi-selection
   if [[ "$multi_selection" == "true" ]]; then
     fzf_args+=("--multi")
+  fi
+
+  # If '$preview_cmd' is not null, set the preview command
+  if [ -n "$preview_cmd" ]; then
+    fzf_args+=("--preview" "${preview_cmd[@]}")
   fi
 
   # Create the fzf command with dynamic preview and bind cases
