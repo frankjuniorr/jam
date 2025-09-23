@@ -59,7 +59,7 @@ ephemeral() {
   )
 
   local image
-  local image=$(create_generic_fzf_menu images "Images")
+  local image=$(create_generic_fzf_menu images "Images" "false" "")
 
   if [ -z "$image" ]; then
     gum style --foreground="$docker_color" "Any docker image was selected"

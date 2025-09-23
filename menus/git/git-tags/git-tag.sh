@@ -28,7 +28,7 @@ new_branch_from_tag() {
 
   local git_tags
   mapfile -t git_tags < <(git tag --sort=-v:refname)
-  local tag_selected=$(create_generic_fzf_menu git_tags "Tags")
+  local tag_selected=$(create_generic_fzf_menu git_tags "Tags" "false" "")
 
   test -z "$tag_selected" && echo "❌ The tag cannot be empty" && exit 1
 
@@ -45,7 +45,7 @@ rename() {
 
   local git_tags
   mapfile -t git_tags < <(git tag --sort=-v:refname)
-  local old_tag=$(create_generic_fzf_menu git_tags "Tags")
+  local old_tag=$(create_generic_fzf_menu git_tags "Tags" "false" "")
   test -z "$old_tag" && echo "❌ The tag cannot be empty" && exit 1
 
   new_tag=$(gum input --cursor.foreground=2 --no-show-help --placeholder="Type the new tag name")

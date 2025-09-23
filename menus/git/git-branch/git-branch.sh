@@ -48,7 +48,7 @@ switch() {
     echo -e "${local_branches}\n${remote_branches}" | grep -v "^$"
   )
 
-  local branch_selected=$(create_generic_fzf_menu all_branches "Branches")
+  local branch_selected=$(create_generic_fzf_menu all_branches "Branches" "false" "")
   branch_selected=$(echo "$branch_selected" | sed -E "s/^([^ ]+)(.*)/\1/")
 
   # Exit if no branch was selected
@@ -140,7 +140,7 @@ new() {
 
   # Menu: branch de origem
   local options=("Default (${default_branch})" "other")
-  local branch_selected=$(create_generic_fzf_menu options "Source Branche")
+  local branch_selected=$(create_generic_fzf_menu options "Source Branche" "false" "")
 
   if [ "$branch_selected" != "other" ]; then
     branch_src="$default_branch"
@@ -150,7 +150,7 @@ new() {
       git branch -r | grep -v "origin/HEAD" | sed "s/^ *//g" | sed "s|origin/||g"
     )
 
-    local remote_branch_selected=$(create_generic_fzf_menu remote_branches "Remote Branche")
+    local remote_branch_selected=$(create_generic_fzf_menu remote_branches "Remote Branche" "false" "")
     branch_src="$remote_branch_selected"
   fi
 

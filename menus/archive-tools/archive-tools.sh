@@ -42,7 +42,7 @@ __list_files() {
     return 1
   fi
 
-  local file_selected=$(create_generic_fzf_menu files "Files")
+  local file_selected=$(create_generic_fzf_menu files "Files" "false" "")
 
   if [[ -z "$file_selected" ]]; then
     echo "⚠️  Any file selected"
@@ -110,7 +110,7 @@ list_contents() {
 
 compress() {
   local current_files=($(fd --type f --max-depth 1))
-  local selected_files=$(create_generic_fzf_menu current_files "Compress" "true")
+  local selected_files=$(create_generic_fzf_menu current_files "Compress" "true" "")
 
   # Transformando em array
   mapfile -t selected_files <<<"$selected_files"
@@ -121,7 +121,7 @@ compress() {
   fi
 
   local compression_formats=("zip" "rar" "tar.gz" "7z")
-  local format_selected=$(create_generic_fzf_menu compression_formats "Format" "false")
+  local format_selected=$(create_generic_fzf_menu compression_formats "Format" "false" "")
 
   if [[ -z "$format_selected" ]]; then
     echo "❌ Any format selected"
