@@ -52,10 +52,10 @@ shell() {
 ephemeral() {
   local docker_color="#0db7ed"
   local images=(
-    "ubuntu:24.04"
-    "archlinux:latest"
-    "rockylinux:9.3"
-    "alpine:latest"
+    "Ubuntu"
+    "Arch Linux"
+    "Rocky Linux"
+    "Alpine"
   )
 
   local image
@@ -66,55 +66,42 @@ ephemeral() {
     exit 1
   fi
 
-  local update_cmd
-  local env_vars
+  local registry="ghcr.io"
+  local user="frankjuniorr"
+  local repository="docker-images"
+
   case "$image" in
-  ubuntu:* | debian:*)
+  "Ubuntu")
     init_cmd=(
-      "apt-get update"
-      "apt-get install -y tzdata vim bash curl wget figlet"
       "clear"
       "figlet \"$image\""
       "exec bash"
     )
-    env_vars=(
-      "-e" "DEBIAN_FRONTEND=noninteractive"
-      "-e" "TZ=America/Recife"
-    )
+    image_url="${registry}/${user}/${repository}/ubuntu-vanilla:latest"
     ;;
-  archlinux:*)
+  "Arch Linux")
     init_cmd=(
-      "pacman -Syu --noconfirm"
-      "pacman -Sy --noconfirm vim bash curl wget figlet"
       "clear"
       "figlet \"$image\""
       "exec bash"
     )
-    env_vars=()
+    image_url="${registry}/${user}/${repository}/archlinux-vanilla:latest"
     ;;
-  rockylinux:* | centos:* | fedora:*)
+  "Rocky Linux")
     init_cmd=(
-      "dnf update -y"
-      "dnf install -y vim bash ncurses epel-release"
-      "dnf install -y figlet"
       "clear"
       "figlet \"$image\""
       "exec bash"
     )
-    env_vars=()
+    image_url="${registry}/${user}/${repository}/rockylinux-vanilla:latest"
     ;;
-  alpine:*)
+  "Alpine")
     init_cmd=(
-      "apk update"
-      "apk add vim bash curl wget figlet"
       "clear"
       "figlet \"$image\""
       "exec bash"
     )
-    env_vars=()
-    ;;
-  *)
-    init_cmd=("sh" "-c" "echo 'Nenhum gerenciador de pacotes detectado' && exec sh")
+    image_url="${registry}/${user}/${repository}/alpine-vanilla:latest"
     ;;
   esac
 
@@ -126,12 +113,12 @@ ephemeral() {
 
   gum style --foreground="$docker_color" "$cmd_str"
 
-  local container_name=$(echo "$image" | cut -d ":" -f1)
+  local container_name=$(basename "$image_url" | cut -d ":" -f1)
+
+  docker pull "$image_url"
   docker run --rm -it \
-    -e TERM=xterm-256color \
     --name "$container_name" \
-    "${env_vars[@]}" \
-    "$image" \
+    "$image_url" \
     sh -c "$cmd_str"
 }
 
