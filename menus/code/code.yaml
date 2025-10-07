@@ -5,6 +5,3 @@ items:
   - icon: "🐋"
     label: "Docker"
     action: "docker"
-  - icon: "🐍"
-    label: "Python"
-    action: "python"

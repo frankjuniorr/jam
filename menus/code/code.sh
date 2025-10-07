@@ -22,10 +22,6 @@ docker() {
   show_menu "${MENUS_DIR}/code/docker/docker.yaml"
 }
 
-python() {
-  show_menu "${MENUS_DIR}/code/python/python.yaml"
-}
-
 ################################################################
 # MAIN
 ################################################################
