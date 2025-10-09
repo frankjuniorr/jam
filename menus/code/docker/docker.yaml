@@ -11,11 +11,6 @@ items:
     action: "shell"
 
 
-  - icon: "⚡"
-    label: "ephemeral"
-    action: "ephemeral"
-
-
   - icon: "📜"
     label: "logs"
     action: "logs"

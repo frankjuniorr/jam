@@ -1,0 +1,13 @@
+title: "Create Lab"
+script: "code/create_lab/create_lab.sh"
+icon: "🔬"
+items:
+  - icon: "🐳"
+    label: "Start a ephemeral container"
+    action: "start_ephemeral_container"
+  - icon: "☸️"
+    label: "Start a k8s cluster"
+    action: "start_k8s_cluster"
+  - icon: "💽"
+    label: "Start a VM"
+    action: "start_vm"

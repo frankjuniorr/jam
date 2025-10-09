@@ -15,11 +15,15 @@ set -u
 source "${SCRIPT_ROOT_DIR}/core/control.sh"
 
 # check dependencies
-dependencies=(python3 docker gum lazydocker)
+dependencies=(docker gum lazydocker)
 is_cmd_installed dependencies
 
 docker() {
   show_menu "${MENUS_DIR}/code/docker/docker.yaml"
+}
+
+create_lab() {
+  show_menu "${MENUS_DIR}/code/create_lab/create_lab.yaml"
 }
 
 ################################################################

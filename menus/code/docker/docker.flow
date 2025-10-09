@@ -11,7 +11,6 @@ executables:
       commands avaliable:
         - "ps" : 'docker ps' customized 
         - "shell" : Enter inside a some container shell 
-        - "ephemeral" : Create a new ephemeral container 
         - "logs" : Show the logs about some container 
         - "TUI" : Open lazydocker 
         - "destroy" : Clean all the docker environment 
