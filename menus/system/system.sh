@@ -38,6 +38,12 @@ __neovim_upgrade() {
   nvim --headless "+Lazy! sync" +qa
 }
 
+__upgrade_hyde() {
+  cd ~/HyDE/Scripts || return
+  git pull
+  ./install.sh -r
+}
+
 __arch_upgrade() {
   figlet "Neovim"
   __neovim_upgrade
@@ -49,6 +55,9 @@ __arch_upgrade() {
 
   echo "==> Limpando o cache do yay..."
   yay -Sc --noconfirm
+
+  figlet "HyDE"
+  __upgrade_hyde
 }
 
 # Menu funtions
